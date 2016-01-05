@@ -48,12 +48,11 @@ router.get('/admin/:id', function(request, response, next) {
 
 app.use('/', router);
 
-// error-handling middleware
+// 3rd-party middleware
 
-app.use(function(err, request, response, next) {
-    console.error(err.stack);
-    response.status(500).send('ooops');
-});
+var bodyParser = require('body-parser');
+
+app.use(bodyParser());
 
 // built-in middleware
 
@@ -68,5 +67,12 @@ var options = {
 };
 
 app.use(express.static(__dirname + '/public', options));
+
+// error-handling middleware (loaded last)
+
+app.use(function(err, request, response, next) {
+    console.error(err.stack);
+    response.status(500).send('ooops');
+});
 
 app.listen(3000);
