@@ -1,5 +1,5 @@
-# express-sandbox
-sandbox for express.js
+# express-hack
+sandbox for express.js code
 
 [scaffolding](scaffold/readme.md)
 
