@@ -1,5 +1,5 @@
-# express-hack
-sandbox for express.js code
+# hack-expressjs
+hacking node's module express.js
 
 [scaffolding](scaffold/readme.md)
 
